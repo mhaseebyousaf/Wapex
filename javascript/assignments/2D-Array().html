@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous" />
+    </head>
+
+    <body>
+        <script>
+            var students = {
+                "Salman Khan" : Array("Shahrukh Khan",50,90,96,78,90),
+                "Amir Khan" : Array("Sami",12,10,11,9,0),
+                "Shohaib" : Array("Akhtar Hassan",60,63,59,92,68),
+                "Nawaz Shahrif" : Array("Imran Khan",80,45,23,90,57),
+                "Alif" : Array("Bay",26,52,39,46,58),
+                "Maryam Nawaz" : Array("Qamar",59,57,67,89,99),
+                "Hamza Abbasi" : Array("Abbas Ahmad",87,68,79,98,62),
+            }
+        </script>
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                        <div class="table-responsive">
+                <table
+                    class="table table-striped table-hover table-borderless table-primary align-middle">
+                    <thead class="table-light">
+                        <caption>
+                            Students Result
+                        </caption>
+                        <tr>
+                            <th>Teacher Name</th>
+                            <th>Student Name</th>
+                            <th>English</th>
+                            <th>Urdu</th>
+                            <th>Math</th>
+                            <th>Physics</th>
+                            <th>Chemistry</th>
+                            <th>Total</th>
+                            <th>Obtained</th>
+                            <th>Percentage</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        <script>
+                            // console.log(students["Alif"]);
+                            var classTotal = 0;
+                            var classObtained = 0;
+                                for (let teacher in students) {
+                                    document.write("<tr class='table-primary'>");
+                                    document.write(`<td>${teacher}</td>`);
+                                    var total = 0;
+                                    var obtained = 0;
+                                    for (let student of students[teacher]) {
+                                        if (typeof student == "number") {
+                                            obtained +=student;
+                                            total += 100;
+                                            document.write(`<td>${student}</td>`);
+                                        } else {
+                                            document.write(`<td>${student}</td>`);
+                                        }
+                                        
+                                    }
+                                    classTotal += total;
+                                    classObtained += obtained;
+                                    
+                                    document.write(`<td>${total}</td>`);
+                                    document.write(`<td>${obtained}</td>`);
+                                    var percent = Math.floor((obtained / total) * 100);
+                                    // Calculating Grade
+                                    var grade;
+                                    if (percent >= 90 && percent <= 100) {
+                                        grade = "A+";
+                                    } else if (percent >= 80 && percent <= 90){
+                                        grade = "A";
+                                    } else if (percent >= 70 && percent <= 80) {
+                                        grade = "B";
+                                    } else if (percent >= 60 && percent <= 70) {
+                                        grade = "C";
+                                    } else if (percent >= 50 && percent <= 60) {
+                                        grade = "D";
+                                    } else if (percent >= 40 && percent <= 50) {
+                                        grade = "E";
+                                    } else if (percent >= 30 && percent <= 40) {
+                                        grade = "F";
+                                    } else if (percent >= 20 && percent <= 30) {
+                                        grade = "F+";
+                                    } else {
+                                        grade = "F+++ ultra max pro limited edition";
+                                    }
+                                    document.write(`<td>${percent}%</td>`);
+                                    document.write(`<td>${grade}</td>`);
+                                    document.write("</tr>");
+                                }
+                                var classPercent = Math.floor((classObtained/classTotal)*100);
+                                // Calculating Class Grade
+                                var classGrade;
+                                if (classPercent >= 90 && classPercent <=100) {
+                                    classGrade = "A++";
+                                } else if (classPercent >= 80 && classPercent <= 90) {
+                                    classGrade = "A";
+                                } else if (classPercent >= 70 && classPercent <= 80) {
+                                    classGrade = "B";
+                                } else if (classPercent >= 60 && classPercent <= 70) {
+                                    classGrade = "C";
+                                } else if (classPercent >= 50 && classPercent <= 60) {
+                                    classGrade = "D";
+                                } else if (classPercent >= 40 && classPercent <= 50) {
+                                    classGrade = "E";
+                                } else if (classPercent >= 30 && classPercent <= 40) {
+                                    classGrade = "F";
+                                } else {
+                                    classGrade = "Beyound Our Limit F++";
+                                }
+                                document.write("<tr>");
+                                document.write(`<td colspan='2'>Class Total : ${classTotal}</td>`);
+                                document.write(`<td colspan='4'>Class Obtained : ${classObtained}</td>`);
+                                document.write(`<td colspan='3'>Class Percentage : ${classPercent}</td>`);
+                                document.write(`<td colspan='2'>Class Grade : ${classGrade}</td>`);
+                                document.write("</tr>");
+                        </script>
+                        
+                            <!-- <td scope="row">Item</td>
+                            <td>Item</td>
+                            <td>Item</td> -->
+                        
+                    </tbody>
+                    <tfoot>
+
+                    </tfoot>
+                </table>
+            </div>
+                </div>
+            </div>
+        </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"></script>
+    </body>
+</html>

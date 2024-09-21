@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>5D Array()</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous" />
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <script>
+                        var students = {
+                            "Faisalabad" : {
+                                "Wapex" : {
+                                    "Web Development 552" : {
+                                        "Salman" : Array("Haseeb",99,99,100,100,100),
+                                        "Hafeeza" : Array("Ali",78,77,82,18,79),
+                                        "Hafeeze" : Array("Ali",78,77,82,18,79),
+                                        "Hafeez" : Array("Ali",78,77,82,18,79),
+                                        "Qadir" : Array("Habib",97,45,25,73,19)
+                                    },
+                                },
+                                "UAF" : {
+                                    "BS IT" : {
+                                        "Salman" : Array("Mohsin",98,85,44,55,88),
+                                        "Qamar" : Array("Saif",11,22,33,44,55),
+                                        "Haq" : Array("Saif",11,22,33,44,55),
+                                        "Chain" : Array("Saif",11,22,33,44,55),
+                                        "Afzal" : Array("Sameer",66,77,88,99,11)
+                                    }
+                                },
+                                "GC UF" : {
+                                    "Bio Technology" : {
+                                        "Saleem" : Array("Sami",11,22,33,44,55),
+                                        "Baba" : Array("Alwi",66,77,88,99,11),
+                                        "Alhamdulillah" : Array("Alwi",66,77,88,99,11),
+                                        "Salam" : Array("Alwi",66,77,88,99,11),
+                                        "Awais" : Array("Qari",99,88,77,66,55)
+                                    }
+                                }
+                            },
+                            "Lahore" : {
+                                "LUMS" : {
+                                    "BS BIOINFO" : {
+                                        "Naveed" : Array("Javad",45,89,2,66,12),
+                                        "Lawaris" : Array("Aljannat",45,89,45,36,48),
+                                        "Awais" : Array("Mutton",45,89,65,25,35),
+                                        "Javaid" : Array("Javaria",48,96,45,23,56),
+                                        "Allah Ditta" : Array("God Granted",78,96,55,35,25)
+                                    },
+                                    "BS AI" : {
+                                        "AI Baba" : Array("Yahoo Baba",45,98,69,45,36),
+                                        "Quantum Ali" : Array("Electron",78,98,58,65,45),
+                                        "Qatab Minar" : Array("Chacha",78,89,5,45,24),
+                                        "Thorax" : Array("Al Khawarizmi",45,89,65,87,59),
+                                        "Changling" : Array("Kingdom",45,69,87,64,32)
+                                    },
+                                    "BS CS" : {
+                                        "King Somra" : Array("Part 1",78,97,54,65,45),
+                                        "Qasadia" : Array("Arjls",45,87,95,63,24),
+                                        "Majasty" : Array("Al Azan",95,85,74,15,65),
+                                        "Toy Light" : Array("Celestia",78,96,45,21,45),
+                                        "Mahatma" : Array("Ghandi",45,78,98,52,24)
+                                    }
+                                },
+                                "King Edward" : {
+                                    "MBBS" : {
+                                        "Bezanazir" : Array("Support",78,98,98,65,25),
+                                        "Ali Rana" : Array("Succhin",58,95,64,34,78),
+                                        "Rai Ali Dana" : Array("Aeli",48,56,98,78,53),
+                                        "Ahmad" : Array("Ali",45,88,99,77,65),
+                                        "Sohail" : Array("Irfan",45,87,98,78,56)
+                                    },
+                                    "BDS" : {
+                                        "Sahil" : Array("Dawood",45,87,96,25,45),
+                                        "Sany" : Array("Haseeb",45,87,59,98,65),
+                                        "Ibrahim" : Array("Shoaib",45,98,56,25,78),
+                                        "Zafar" : Array("Qasim",78,98,58,65,64),
+                                        "Hussain" : Array("Husnain",45,87,98,75,45)
+                                    }
+                                }
+                            }
+                        }
+            
+                        for (const city in students) {
+                            document.write("<h1 class='bg-primary text-white text-center'>" + city + "</h1>");
+                                
+                                    // Interpreting Institute
+                                    var institutes = students[city];
+                                    for (const institute in institutes) {
+                                        document.write("<h2 class='bg-secondary py-2 text-white text-center'>"+institute+"</h2>");
+                                        // Interpreting degree
+                                        var degrees = institutes[institute];
+                                        for (const degree in degrees) {
+                                            document.write("<table class='table table-info table-striped table-hover'>");
+                                            document.write("<thead>");
+                                            document.write("<tr class='table-success'>");
+                                                document.write("<th colspan='11'>" + degree + "</th>");
+                                            document.write("</tr>");
+                                            document.write("<tr>");
+                                                document.write("<th>Teacher Name</th><th>Student Name</th><th>English</th><th>Urdu</th><th>Math</th><th>Science</th><th>History</th><th>Total</th><th>Obtained</th><th>Percentage</th><th>Grade</th>");
+                                            document.write("</tr>");
+                                            document.write("</thead>");
+                                            document.write("</tbody>");
+                                            // Interpreting Teachers 
+                                            var teachers = degrees[degree];
+                                            var classTotal = 0;
+                                            var classObtained = 0;
+                                            for (const teacher in teachers) {
+                                                document.write("<tr>");
+                                                    document.write("<td>" + teacher + "</td>");
+                                                    // Interpreting Students
+                                                    var total = 0;
+                                                    var obtained = 0;
+                                                    var stdnts = teachers[teacher];
+                                                    for (const stdnt of stdnts) {
+                                                        // console.log(stdnt);
+                                                        if (typeof stdnt == "number") {
+                                                            total += 100;
+                                                            obtained += stdnt;
+                                                            document.write("<td>" + stdnt + "</td>");
+                                                            
+                                                        } else {
+                                                            console.log(stdnt);
+                                                            document.write("<td>" + stdnt + "</td>");
+                                                        }
+                                                    }
+                                                    classTotal += total;
+                                                    classObtained += obtained;
+                                                    // Calculating Percentage
+                                                    var percent = Math.floor((obtained/total)*100);
+                                                    // Calculating Grade
+                                                    var grade;
+                                                    if (percent >= 90 && percent <= 100) {
+                                                        grade = "A++";
+                                                    } else if (percent >= 80 && percent <= 90) {
+                                                        grade = "A+";
+                                                    } else if (percent >= 70 && percent <= 80) {
+                                                        grade = "A";
+                                                    } else if (percent >= 60 && percent <= 70) {
+                                                        grade = "B";
+                                                    } else if (percent >= 50 && percent <= 60) {
+                                                        grade = "C";
+                                                    } else if (percent >= 40 && percent <= 50) {
+                                                        grade = "D";
+                                                    } else if (percent >= 30 && percent <= 40) {
+                                                        grade = "E";
+                                                    } else if (percent >= 20 && percent <= 30) {
+                                                        grade = "F";
+                                                    } else {
+                                                        grade = "F+";
+                                                    }
+                                                    document.write("<td>" + total + "</td>");
+                                                    document.write("<td>" + obtained + "</td>");
+                                                    document.write("<td>" + percent + "%</td>");
+                                                    document.write("<td>" + grade + "</td>");
+                                                    
+                                                document.write("</tr>");
+                                                
+                                            }
+                                            document.write("</tbody>");
+                                            // Calculating class percentage
+                                            var classPercent = Math.floor((classObtained/classTotal)*100);
+                                            // Calculating Class Grade
+                                            var classGrade;
+                                            if (classPercent >= 90 && classPercent <= 100) {
+                                                classGrade = "A++";
+                                            } else if (classPercent >= 80 && classPercent <= 90) {
+                                                classGrade = "A+";
+                                            } else if (classPercent >= 70 && classPercent <= 80) {
+                                                classGrade = "A";
+                                            } else if (classPercent >= 60 && classPercent <= 70) {
+                                                classGrade = "B";
+                                            } else if (classPercent >= 50 && classPercent <= 60) {
+                                                classGrade = "C";
+                                            } else if (classPercent >= 40 && classPercent <= 50) {
+                                                classGrade = "D";
+                                            } else if (classPercent >= 30 && classPercent <= 40) {
+                                                classGrade = "E";
+                                            } else if (classPercent >= 20 && classPercent <= 30) {
+                                                classGrade = "F";
+                                            } else {
+                                                classGrade = "F+";
+                                            }
+                                            document.write("<tfoot class='table-warning'>");
+                                                document.write("<tr class='table-warning'>");
+                                                    document.write("<td colspan='2'>Class Total = " + classTotal + "</td>");
+                                                    document.write("<td colspan='3'>Class Obtained = " + classObtained + "</td>");
+                                                    document.write("<td colspan='3'>Class Percentage = " + classPercent + "%</td>");
+                                                    document.write("<td colspan='3'>Class Grade = " + classGrade + "</td>");
+                                                document.write("</tr>");
+                                            document.write("</tfoot>");
+                                            document.write("</table>");
+                                        }
+                                        
+                                    }
+                                    
+                                
+                            
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"></script>
+    </body>
+</html>

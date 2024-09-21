@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+<body>
+    <script>
+        var students = {
+            "Haseeb" : Array(23,45,67),
+            "Sami" : Array(34,67,78),
+        }
+        document.write("<table border='1'><thead><tr><td>Student Name</td><td>English</td><td>Urdu</td><td>Math</td></tr></thead>");
+        for (const student in students) {
+            document.write("<tr><td>" + student + "</td>");
+            for (const marks of students[student]) {
+                document.write("<td>" + marks +"</td>");
+            }
+            document.write("</tr>");
+        }
+
+        var names = Array("Haseeb","Sami","Mohsin");
+        var i = 0;
+        do {
+            document.write(names[i]);
+            i++;
+        } while (i < names.length);
+    </script>
+</body>
+</html>

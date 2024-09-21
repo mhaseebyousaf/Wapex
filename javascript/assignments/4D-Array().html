@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>4D Array()</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous" />
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <script>
+                        var students = {
+                            "UAF" : {
+                                "BS IT" : {
+                                    "Salman" : Array("Haleem",79,89,99,76,70),
+                                    "Kareem" : Array("Majeed",90,86,98,26,57),
+                                    "Aleem" : Array("Alam",45,25,2,52,19),
+                                    "Haseeb" : Array("Sami",78,89,45,56,24),
+                                    "Aqib" : Array("Zong",45,89,78,98,45)
+                                },
+                                "BS CS" : {
+                                    "Rana" : Array("Majid",89,77,87,57,85),
+                                    "Saleem" : Array("Akhtar",99,89,87,84,68),
+                                    "Ameen" : Array("Sadiq",47,89,99,87,87),
+                                    "Shaikh" : Array("Shaikh",78,78,98,78,98),
+                                    "Jutt" : Array("Shaikh",89,98,78,99,77)
+                                },
+                                "BS SE" : {
+                                    "Rana" : Array("Majid",89,77,87,57,85),
+                                    "Saleem" : Array("Akhtar",99,89,87,84,68),
+                                    "Ameen" : Array("Sadiq",47,89,99,87,87),
+                                    "Shaikh" : Array("Shaikh",78,78,98,78,98),
+                                    "Jutt" : Array("Shaikh",89,98,78,99,77)
+                                }
+                            },
+                            "GC Faisalabad" : {
+                                "BS IT" : {
+                                    "Salman" : Array("Haleem",79,89,99,76,70),
+                                    "Kareem" : Array("Majeed",90,86,98,26,57),
+                                    "Aleem" : Array("Alam",45,25,2,52,19),
+                                    "Haseeb" : Array("Sami",78,89,45,56,24),
+                                    "Aqib" : Array("Zong",45,89,78,98,45)
+                                },
+                                "BS CS" : {
+                                    "Rana" : Array("Majid",89,77,87,57,85),
+                                    "Saleem" : Array("Akhtar",99,89,87,84,68),
+                                    "Ameen" : Array("Sadiq",47,89,99,87,87),
+                                    "Shaikh" : Array("Shaikh",78,78,98,78,98),
+                                    "Jutt" : Array("Shaikh",89,98,78,99,77)
+                                },
+                                "BS SE" : {
+                                    "Rana" : Array("Majid",89,77,87,57,85),
+                                    "Saleem" : Array("Akhtar",99,89,87,84,68),
+                                    "Ameen" : Array("Sadiq",47,89,99,87,87),
+                                    "Shaikh" : Array("Shaikh",78,78,98,78,98),
+                                    "Jutt" : Array("Shaikh",89,98,78,99,77)
+                                }
+                            },
+                            "NUST" : {
+                                "BS IT" : {
+                                    "Salman" : Array("Haleem",79,89,99,76,70),
+                                    "Kareem" : Array("Majeed",90,86,98,26,57),
+                                    "Aleem" : Array("Alam",45,25,2,52,19),
+                                    "Haseeb" : Array("Sami",78,89,45,56,24),
+                                    "Aqib" : Array("Zong",45,89,78,98,45)
+                                },
+                                "BS CS" : {
+                                    "Rana" : Array("Majid",89,77,87,57,85),
+                                    "Saleem" : Array("Akhtar",99,89,87,84,68),
+                                    "Ameen" : Array("Sadiq",47,89,99,87,87),
+                                    "Shaikh" : Array("Shaikh",78,78,98,78,98),
+                                    "Jutt" : Array("Shaikh",89,98,78,99,77)
+                                },
+                                "BS SE" : {
+                                    "Rana" : Array("Majid",89,77,87,57,85),
+                                    "Saleem" : Array("Akhtar",99,89,87,84,68),
+                                    "Ameen" : Array("Sadiq",47,89,99,87,87),
+                                    "Shaikh" : Array("Shaikh",78,78,98,78,98),
+                                    "Jutt" : Array("Shaikh",89,98,78,99,77)
+                                }
+                            }
+                        }
+                        for (const uni in students) {
+                            // Implementing Universities Names
+                            document.write("<h1 class='bg-primary text-center py-2 text-white'>" + uni + "</h1>");
+                            // Implementing Degree Names
+                            var degrees = students[uni];
+                            for (const degree in degrees) {
+                                document.write("<table class='table table-primary table-hover table-striped'>");
+                                document.write("<thead>");
+                                    document.write("<tr class='table-info'><th colspan='11'>" + degree + "</th></tr>");
+                                    document.write("<tr>");
+                                        document.write("<th>Teacher Name</th><th>Student Name</th><th>English</th><th>Urdu</th><th>Math</th><th>Science</th><th>History</th><th>Total</th><th>Obtained</th><th>Percentage</th><th>Grade</th>");
+                                    document.write("</tr>");
+                                document.write("</thead>");
+                                document.write("<tbody>");
+                                var classTotal = 0;
+                                var classObtained = 0;
+
+                                // Implementing Teacher Names
+                                var teachers = degrees[degree];
+                                for (const teacher in teachers) {
+                                    document.write("<tr>");
+                                        document.write("<td>" + teacher + "</td>");
+                                        // Implementing Student Details
+                                        var stdnts = teachers[teacher];
+                                        var total = 0;
+                                        var obtained = 0;
+                                        for (const stdnt of stdnts) {
+                                            if (typeof stdnt == "number") {
+                                                total += 100;
+                                                obtained += stdnt;
+                                                document.write("<td>" + stdnt + "</td>");
+                                            } else {
+                                                document.write("<td>" + stdnt + "</td>");
+                                            }
+                                        }
+                                        classTotal += total;
+                                        classObtained += obtained;
+                                        // Calculating Percentage
+                                        var percent = Math.floor((obtained/total)*100);
+                                        // Calculating Grade
+                                        var grade;
+                                        if (percent >= 90 && percent <= 100) {
+                                            grade = "A+++";
+                                        } else if (percent >= 80 && percent <= 90) {
+                                            grade = "A++";
+                                        } else if (percent >= 70 && percent <= 80) {
+                                            grade = "A+";
+                                        } else if (percent >= 60 && percent <= 70) {
+                                            grade = "A";
+                                        } else if (percent >= 50 && percent <= 60) {
+                                            grade = "B";
+                                        } else if (percent >= 40 && percent <= 50) {
+                                            grade = "C";
+                                        } else if (percent >= 30 && percent <= 40) {
+                                            grade = "D";
+                                        } else if (percent >= 20 && percent <= 30) {
+                                            grade = "E";
+                                        } else if (percent >= 10 && percent <= 20) {
+                                            grade = "F";
+                                        } else {
+                                            grade = "F+";
+                                        }
+                                        document.write("<td>" + total + "</td>");
+                                        document.write("<td>" + obtained + "</td>");
+                                        document.write("<td>" + percent + "%</td>");
+                                        document.write("<td>" + grade + "</td>");
+                                    document.write("</tr>");
+                                
+                                }
+                                document.write("</tbody>");
+                                document.write("<tfoot class='table-success'>");
+                                // Calculating class percentage
+                                var classPercent = Math.floor((classObtained/classTotal)*100);
+                                // Calculating class grade
+                                var classGrade;
+                                if (classPercent >= 90 && classPercent <= 100) {
+                                    classGrade = "A++";
+                                } else if (classPercent >= 80 && classPercent <= 90) {
+                                    classGrade = "A+";
+                                } else if (classPercent >= 70 && classPercent <= 80) {
+                                    classGrade = "A";
+                                } else if (classPercent >= 60 && classPercent <= 70) {
+                                    classGrade = "B";
+                                } else if (classPercent >= 50 && classPercent <= 60) {
+                                    classGrade = "C";
+                                } else if (classPercent >= 40 && classPercent <= 50) {
+                                    classGrade = "D";
+                                } else if (classPercent >= 30 && classPercent <= 40) {
+                                    classGrade = "E";
+                                } else if (classPercent >= 20 && classPercent <= 30) {
+                                    classGrade = "F";
+                                } else {
+                                    classGrade = "F+";
+                                }
+                                document.write("<tr>");
+                                    document.write("<td colspan='2'>Class Total = " + classTotal + "</td>");
+                                    document.write("<td colspan='2'>Class Obtained = " + classObtained + "<td>");
+                                    document.write("<td colspan='4'>Class Percent = " + classPercent + "%</td>");
+                                    document.write("<td colspan='2'>Class Grade = " + classGrade + "</td>");
+                                document.write("</tr>");
+                                document.write("</tfoot>");
+                                document.write("</table>");
+                            }
+                            
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+        
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"></script>
+    </body>
+</html>

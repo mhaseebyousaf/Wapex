@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string search</title>
+</head>
+<body>
+    <script>
+        var str = "This is a new string for performing search operations. this is also a is isisissi is is is is is a string only";
+        console.log(str.indexOf("is",2));
+        console.log(str.lastIndexOf("is"));
+        console.log(str.search("is"));
+        console.log(str.match(/ions/));
+        console.log(str.match(/ions/g));
+        var reg = str.matchAll(/ing/gi);
+        console.log(Array.from(reg));
+       if (str.includes("new")) {
+        console.log("yes the \"word\" is included");
+       }
+    </script>
+</body>
+</html>
